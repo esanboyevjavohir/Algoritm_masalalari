@@ -2,13 +2,17 @@
 
 using Sortlash_Algoritms;
 
-Console.Write("son = ");
-int x = int.Parse(Console.ReadLine());
 
-var factorial = new Algoritm();
-var result = factorial.Factorial(x);
 
-Console.Write("Sonning factoriali = " + result);
+#region Factorial_Rekursiv
+//Console.Write("son = ");
+//int x = int.Parse(Console.ReadLine());
+
+//var factorial = new Algoritm();
+//var result = factorial.Factorial_Rekursiv(x);
+
+//Console.Write("Sonning factoriali = " + result); 
+#endregion
 
 #region Factorial_For
 //Console.Write("son = ");

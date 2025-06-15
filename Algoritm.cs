@@ -106,7 +106,10 @@
 
         public int Factorial_Rekursiv(int a)
         {
-            return Factorial(a);
+            if (a <= 1)
+                return 1;
+
+            return a * Factorial_Rekursiv(a - 1);
         }
     }
 }
