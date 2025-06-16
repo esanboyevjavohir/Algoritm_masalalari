@@ -2,7 +2,46 @@
 
 using Sortlash_Algoritms;
 
+int[] sonlar = {5, 3, 8, 2, 11, 6, 5, 8, 24, 2};
 
+int[] newSonlar = sonlar.Distinct().ToArray();
+
+foreach(int i in newSonlar)
+{
+    Console.Write(i + ", ");
+}
+
+int takrorSonIndexi = 0;
+for(int i = 0; i < sonlar.Length; i++)
+{
+    //takrorSon = sonlar[0];
+    for(int j = 1; j < sonlar.Length; j++)
+    {
+        if (sonlar[i] == sonlar[j])
+        {
+            takrorSonIndexi = j;
+        }
+    }
+}
+
+#region Massivni_Eng_Katta_Elementini_Topish
+//int[] massiv = { 78, 3, 65, 8, 4, 25, 2, 7, 13, 1, 100 };
+
+//int kattaSon = 0;
+//for(int i = 0; i < massiv.Length; i++)
+//{
+//    kattaSon = massiv[0];
+//    for (int j = 1; j < massiv.Length; j++)
+//    {
+//        if(kattaSon < massiv[j])
+//        {
+//            kattaSon = massiv[j];
+//        }
+//    }
+//} 
+
+//Console.Write("Massivdagi katta element = " + kattaSon);
+#endregion
 
 #region Factorial_Rekursiv
 //Console.Write("son = ");
