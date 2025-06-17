@@ -1,5 +1,64 @@
 ﻿namespace Sortlash_Algoritms
 {
+    class a
+    {
+        public class b
+        {
+            public class c
+            {
+                public void Print()
+                {
+                    Console.WriteLine("c");
+                }
+            }
+        }
+    }
+
+    public class A
+    {
+        public A(string msg)
+        {
+            Console.WriteLine("A(string) " + msg);
+        }
+
+        public A()
+        {
+            Console.WriteLine("A() constructor");
+            Show();
+        }
+
+        public virtual void Show()
+        {
+            Console.WriteLine("Show A");
+        }
+    }
+
+    public class B : A
+    {
+        public B() 
+        {
+            Console.WriteLine("B() constructor");
+        }
+
+        public override void Show()
+        {
+            Console.WriteLine("Show B");
+        }
+    }
+
+    public class C : B
+    {
+        public C()
+        {
+            Console.WriteLine("C() constructor");
+        }
+
+        public override void Show()
+        {
+            Console.WriteLine("Show C");
+        }
+    }
+
     public class Algoritm
     {
         public bool TubSon(int a)
