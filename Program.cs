@@ -1,6 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Sortlash_Algoritms;
+using System.Collections;
+
+public struct Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine("X = "+X+", Y = "+Y);
+    }
+}
 
 internal class Program
 {
@@ -16,27 +34,92 @@ internal class Program
         summ = a + b;
     }
 
+    public Tuple<string, int, int> GetStudent()
+    {
+        return Tuple.Create("Azam", 23, 3);
+    }
+
+    public (string Name, int Age) GetPerson()
+    {
+        return ("Jamshid", 30);
+    }
+
     private static void Main(string[] args)
     {
+        var valueTuple = (Id: 1, Name: "Alijon",Passed: false);
+        Console.Write(valueTuple.Name+"\n");
+        Console.Write(valueTuple.Id);
+
+        var tuple = new Tuple<int, string, bool>(1, "Ali", true); 
+
+        Program program = new Program();
+        var student = program.GetStudent();
+
+        //Console.Write($"Ismi : {student.Item1}, Yoshi : {student.Item2}, Kursi : {student.Item3}");
+
+        IEnumerable<int> GetNumbers()
+        {
+            yield return 1;
+            yield return 2;
+            yield return 3;
+            yield return 4;
+        }
+
+        foreach(int son in GetNumbers())
+        {
+            //Console.WriteLine(son);
+        }
+
+        ArrayList arrayList = new ArrayList();
+        arrayList.Add(1);
+        arrayList.Insert(1, "Zurku");
+        arrayList.Add('t');
+        arrayList.Contains(1);
+        //arrayList.Remove(1);
+        arrayList.RemoveAt(0);
+
+        foreach (object obj in arrayList)
+        {
+            //Console.WriteLine(obj);
+        }
+
+        string[] massiv = {"Ali", "Vali", "Axmad", "Guli"};
+        massiv[3] = "Zicha";
+
+        foreach (string item in massiv)
+        {
+            //Console.Write(item+", ");
+        }
+
+        Point p1 = new Point(10, 20);
+        Point p2 = p1;
+
+        p2.X = 55;
+
+        //p1.Display();
+        //p2.Display();
+
         int[] array = { 5, 3, 8, 2, 11, 6, 5, 8, 24, 2 };
 
         //C c1 = new C();
 
-        string kirish = "123";
-        if(int.TryParse(kirish, out int natija))
-        {
-            Console.WriteLine("Son = "+natija.GetType() +", "+ kirish.GetType());
-        }
-        else
-            Console.WriteLine("!!!");
+        #region Ref_and_Out
+        //string kirish = "123";
+        //if(int.TryParse(kirish, out int natija))
+        //{
+        //    Console.WriteLine("Son = "+natija.GetType() +", "+ kirish.GetType());
+        //}
+        //else
+        //    Console.WriteLine("!!!");
 
-        int a = 5;
-        Kvadrat(ref a);
-        Console.WriteLine(a);
+        //int a = 5;
+        //Kvadrat(ref a);
+        //Console.WriteLine(a);
 
-        int x = 5, y, summa;
-        IkkiSonniQaytar(out x, out y, out summa);
-        Console.WriteLine("x = "+x+ "\ny = "+y+ "\nsumma = "+summa);
+        //int x = 5, y, summa;
+        //IkkiSonniQaytar(out x, out y, out summa);
+        //Console.WriteLine("x = "+x+ "\ny = "+y+ "\nsumma = "+summa); 
+        #endregion
 
         #region Massivdan_Takrorlarni_Olib_Tashlash
         //int[] sonlar = {5, 3, 8, 2, 11, 6, 5, 8, 24, 2};
@@ -279,6 +362,5 @@ internal class Program
         }
     }
 }
-
 //IkkiBaravar(ref a);
 //Console.WriteLine(a); // => 20
